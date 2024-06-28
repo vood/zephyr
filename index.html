@@ -266,7 +266,13 @@
                     model: 'gpt-4',
                     messages: [{
                         role: 'user',
-                        content: `Generate a ${duration}-minute ${meditationType} meditation script. Use a dash (-) to indicate a short pause and multiple dashes (---) for longer pauses. Include long pauses between each sentence. Do not include any introductory or concluding text, only the meditation guidance itself. ${customGuidance ? 'Include the following custom guidance: ' + customGuidance : ''}`
+                        content: `Generate a ${duration}-minute ${meditationType} meditation script. 
+                        
+                        Use a tag <break time="1.0s" /> to indicate pauses. Include long pauses between each sentence. 
+                        
+                        An example: "Give me one second to think about it." <break time="1.0s" /> "Yes, that would work." 
+                        
+                        Do not include any introductory or concluding text, only the meditation guidance itself. ${customGuidance ? 'Include the following custom guidance: ' + customGuidance : ''}`
                     }]
                 })
             });
